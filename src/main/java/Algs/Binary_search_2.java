@@ -31,5 +31,20 @@ public class Binary_search_2 {
         return  position;
     }
 
+    public static void setCountZero(){
+        count = 0;
+    }
+
+    public static int recursiveBinarySearch(int[] array, int desiredElement, int start, int end){
+        int middle = (start + end)/2;
+        count++;
+        if (desiredElement == array[middle])
+            return middle;
+        if (desiredElement < array[middle])
+            return recursiveBinarySearch(array, desiredElement, start, middle -1);
+        else
+            return recursiveBinarySearch(array, desiredElement,middle + 1, end);
+    }
+
 
 }
